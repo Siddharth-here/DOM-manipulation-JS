@@ -30,14 +30,26 @@ const child = document.getElementById("child");
 
 const body = document.body;
 
-body.addEventListener("click", function () {
-  console.log("body clicked");
-},true);
+// body.addEventListener("click", function () {
+//   console.log("body clicked");
+// },false);
 
-parent.addEventListener("click", function () {
-  console.log("parent clicked");
-},true);
+// parent.addEventListener("click", function () {
+//   console.log("parent clicked");
+// },true);
 
-child.addEventListener("click", function () {
-  console.log("child clicked");
-},true);
+child.addEventListener("click", (event) => {
+  console.log(event);
+});
+
+// body.addEventListener("click", function () {
+//   console.log("body clicked");
+// },false);
+
+const items = document.querySelectorAll("li");
+
+items.forEach((item) => {
+  item.addEventListener("click", () => {
+    console.log(item.textContent);
+  });
+});
