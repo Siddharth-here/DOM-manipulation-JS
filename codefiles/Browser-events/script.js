@@ -48,8 +48,28 @@ child.addEventListener("click", (event) => {
 
 const items = document.querySelectorAll("li");
 
-items.forEach((item) => {
-  item.addEventListener("click", () => {
-    console.log(item.textContent);
-  });
-});
+// items.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     console.log(item.textContent);
+//   });
+// });
+
+//eventdelegatation
+
+const anchor = document.getElementById("link");
+
+anchor.addEventListener("click",(e) => {
+    e.preventDefault() // prevents the defult behaviour
+    console.log("clicked");
+    
+})
+
+const list = document.getElementById("list")
+
+list.addEventListener("click", (e)=>{
+   if(e.target.tagName === "LI"){
+    console.log(e.target.textContent);
+   }
+})
+
+// closet()
